@@ -10,18 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var messages_service_1 = require("./messages.service");
+var images_service_1 = require("./images.service");
 var MessagesComponent = (function () {
-    function MessagesComponent(messagesService) {
+    function MessagesComponent(messagesService, imagesService) {
+        this.isActive = true;
         this.messages = messagesService.getMessages();
+        this.images = imagesService.getImages();
     }
+    MessagesComponent.prototype.onDivClick = function ($event) {
+        console.log("handled by div");
+    };
+    MessagesComponent.prototype.onClick = function ($event) {
+        $event.stopPropagation();
+        console.log("click by button");
+    };
     return MessagesComponent;
 }());
 MessagesComponent = __decorate([
     core_1.Component({
         selector: 'messages',
-        template: "<h1>Messages</h1>\n        <ul>\n            <li *ngFor=\"let m of messages\">{{m}}</li>\n        </ul>\n    "
+        template: "<h1>Messages</h1>\n        <ul>\n            <li *ngFor=\"let m of messages\">{{m}}</li>\n            <li *ngFor=\"let i of images\"><img src=\"{{i}}\" />{{i}}</li>\n        </ul>\n        <div (click)=\"onDivClick()\">\n        <button \n            class=\"btn btn-primary\" [class.active]=\"isActive\"\n            [style.backgroundColor]=\"isActive ? 'blue' : 'gray'\"\n            (click)=\"onClick($event)\">A Buttttt</button>\n        </div>\n        <input type=\"text\" [(title)]=\"title\" />\n        Preview: {{title}}\n    "
     }),
-    __metadata("design:paramtypes", [messages_service_1.MessagesService])
+    __metadata("design:paramtypes", [messages_service_1.MessagesService, images_service_1.ImagesService])
 ], MessagesComponent);
 exports.MessagesComponent = MessagesComponent;
 //# sourceMappingURL=messages.component.js.map

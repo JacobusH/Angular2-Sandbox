@@ -2,6 +2,21 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template: '<messages></messages>'
+    template: `
+      <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+      <messages></messages>
+    `
 })
-export class AppComponent { }
+export class AppComponent { 
+
+  post = {
+    title: "Title",
+    isFavorite: true
+  }
+
+  onFavoriteChange($event)
+  {
+    console.log($event);
+  }
+
+}

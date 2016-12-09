@@ -13,6 +13,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var messages_component_1 = require("./messages.component");
 var messages_service_1 = require("./messages.service");
+var images_service_1 = require("./images.service");
+var favorite_component_1 = require("./favorite.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,9 +23,9 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent],
         bootstrap: [app_component_1.AppComponent],
-        providers: [messages_service_1.MessagesService]
+        providers: [messages_service_1.MessagesService, images_service_1.ImagesService]
     }),
     __metadata("design:paramtypes", [])
 ], AppModule);

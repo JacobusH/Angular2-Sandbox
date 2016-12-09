@@ -11,13 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.post = {
+            title: "Title",
+            isFavorite: true
+        };
     }
+    AppComponent.prototype.onFavoriteChange = function ($event) {
+        console.log($event);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: '<messages></messages>'
+        template: "\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <messages></messages>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

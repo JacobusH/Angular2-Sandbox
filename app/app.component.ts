@@ -22,6 +22,7 @@ import {SummaryPipe} from './summary.pipe'
         Content of Zippy 2
       </zippy>
      <br/>
+     <contact-form></contact-form>
      
     `
 })

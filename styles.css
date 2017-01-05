@@ -12,3 +12,8 @@ h2, h3 {
 body {
   margin: 2em;
 }
+
+.form-control.ng-touched.ng-invalid
+{
+  border: 1px solid red;
+}

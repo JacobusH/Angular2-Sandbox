@@ -9,10 +9,12 @@ import {LikeComponent} from './like.component';
 import {VoterComponent} from './voter.component';
 import {SummaryPipe} from './summary.pipe';
 import {ZippyComponent} from './zippy.component';
+import {FormsModule} from '@angular/forms';
+import {ContactFormComponent} from './contact-form.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent ],
+  imports:      [ BrowserModule, FormsModule ],
+  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent, ContactFormComponent ],
   bootstrap:    [ AppComponent ],
   providers: [MessagesService,  ImagesService]
 })

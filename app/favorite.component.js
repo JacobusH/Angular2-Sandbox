@@ -31,7 +31,7 @@ __decorate([
 FavoriteComponent = __decorate([
     core_1.Component({
         selector: 'favorite',
-        template: "\n        <i \n            class=glyphicon\n            [class.glyphicon-star-empty]=\"!isFavorite\"\n            [class.glyphicon-star]=\"isFavorite\"\n            (click)=\"onClick()\">\n        </i>\n    "
+        template: "\n        <i \n            class=glyphicon\n            [ngClass]=\"{\n                'glyphicon-star-empty': !isFavorite,\n                'glyphicon-star': isFavorite\n            }\"\n            (click)=\"onClick()\">\n        </i>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], FavoriteComponent);

@@ -6,8 +6,10 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     template: `
         <i 
             class=glyphicon
-            [class.glyphicon-star-empty]="!isFavorite"
-            [class.glyphicon-star]="isFavorite"
+            [ngClass]="{
+                'glyphicon-star-empty': !isFavorite,
+                'glyphicon-star': isFavorite
+            }"
             (click)="onClick()">
         </i>
     `

@@ -11,9 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.likes = {
+            likeCount: 109,
+            isLiked: false
+        };
+        this.votes = {
+            voteCount: 99
+        };
         this.post = {
             title: "Title",
-            isFavorite: true
+            isFavorite: true,
+            body: "\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lorem nec urna convallis finibus. Cras eget nulla odio. Duis porttitor nulla sit amet augue lacinia, eget convallis dui convallis. In ac nisi leo. Donec vitae odio nunc. Curabitur tempor, arcu ut placerat laoreet, mi leo dictum justo, sed consequat tortor mi convallis magna. Suspendisse sed suscipit ante, at faucibus felis. Donec vulputate lorem sed quam dignissim sollicitudin vitae ut metus. Nunc sagittis rutrum ultrices. Curabitur sit amet mollis eros. Sed dapibus metus et purus vehicula posuere. Proin efficitur sit amet felis iaculis auctor. Duis fringilla sem eget sem molestie consectetur.\n    "
         };
     }
     AppComponent.prototype.onFavoriteChange = function ($event) {
@@ -24,7 +32,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <messages></messages>\n    "
+        template: "\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [likeCount]=\"likes.likeCount\" [isLiked]=\"likes.isLiked\"></like>\n      <div>\n        {{post.body | summary:100}}\n      </div>\n      <voter [voteCount]=\"votes.voteCount\"></voter>\n      <messages></messages>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

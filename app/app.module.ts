@@ -5,10 +5,13 @@ import {MessagesComponent} from './messages.component';
 import {MessagesService} from './messages.service';
 import {ImagesService} from './images.service';
 import {FavoriteComponent} from './favorite.component';
+import {LikeComponent} from './like.component';
+import {VoterComponent} from './voter.component';
+import {SummaryPipe} from './summary.pipe'
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, MessagesComponent, FavoriteComponent ],
+  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe ],
   bootstrap:    [ AppComponent ],
   providers: [MessagesService,  ImagesService]
 })

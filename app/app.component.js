@@ -32,7 +32,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [likeCount]=\"likes.likeCount\" [isLiked]=\"likes.isLiked\"></like>\n      <div>\n        {{post.body | summary:100}}\n      </div>\n      <voter [voteCount]=\"votes.voteCount\"></voter>\n      <messages></messages>\n    "
+        template: "\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [likeCount]=\"likes.likeCount\" [isLiked]=\"likes.isLiked\"></like>\n      <div>\n        {{post.body | summary:100}}\n      </div>\n      <zippy title=\"Zipyyyyyyy\">\n      Yes this is zipppedpepd \n      </zippy>\n      <voter [voteCount]=\"votes.voteCount\"></voter>\n      <messages></messages>\n      <zippy title=\"Title of Zippy 1\">\n        Content of Zippy 1\n      </zippy>\n      <zippy title=\"Title of Zippy 2\">\n        Content of Zippy 2\n      </zippy>\n     <br/>\n     \n    "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

@@ -7,11 +7,12 @@ import {ImagesService} from './images.service';
 import {FavoriteComponent} from './favorite.component';
 import {LikeComponent} from './like.component';
 import {VoterComponent} from './voter.component';
-import {SummaryPipe} from './summary.pipe'
+import {SummaryPipe} from './summary.pipe';
+import {ZippyComponent} from './zippy.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe ],
+  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent ],
   bootstrap:    [ AppComponent ],
   providers: [MessagesService,  ImagesService]
 })

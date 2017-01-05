@@ -9,25 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ZippyComonent = (function () {
-    function ZippyComonent() {
-        this.isExpaned = false;
+var ZippyComponent = (function () {
+    function ZippyComponent() {
+        this.isExpanded = false;
     }
-    ZippyComonent.prototype.toggle = function () {
-        this.isExpaned = !this.isExpaned;
+    ZippyComponent.prototype.toggle = function () {
+        this.isExpanded = !this.isExpanded;
     };
-    return ZippyComonent;
+    return ZippyComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], ZippyComonent.prototype, "title", void 0);
-ZippyComonent = __decorate([
+], ZippyComponent.prototype, "title", void 0);
+ZippyComponent = __decorate([
     core_1.Component({
         selector: 'zippy',
-        template: "\n        <div class=\"zippy\">\n            <div class=\"zipp-title\">\n            </div>\n            <div class=\"zippy-content\">\n            </div>\n        </div>\n    "
+        template: "\n        <div class=\"zippy\">\n            <div \n                class=\"zippy-title\" \n                (click)=\"toggle()\"\n            >\n                {{title}}\n                <i class=\"glyphicon pull-right\"\n                    [ngClass]=\"{\n                        'glyphicon-chevron-up': !isExpanded,\n                        'glyphicon-chevron-down': isExpanded\n                    }\"\n                >\n                </i> \n            </div>\n            <div *ngIf=\"isExpanded\" class=\"zippy-content\">\n                <ng-content></ng-content>\n            </div>\n        </div>\n    "
     }),
     __metadata("design:paramtypes", [])
-], ZippyComonent);
-exports.ZippyComonent = ZippyComonent;
+], ZippyComponent);
+exports.ZippyComponent = ZippyComponent;
 //# sourceMappingURL=zippy.component.js.map

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {SummaryPipe} from './summary.pipe'
 
+
 @Component({
     selector: 'my-app',
     template: `
@@ -9,8 +10,19 @@ import {SummaryPipe} from './summary.pipe'
       <div>
         {{post.body | summary:100}}
       </div>
+      <zippy title="Zipyyyyyyy">
+      Yes this is zipppedpepd 
+      </zippy>
       <voter [voteCount]="votes.voteCount"></voter>
       <messages></messages>
+      <zippy title="Title of Zippy 1">
+        Content of Zippy 1
+      </zippy>
+      <zippy title="Title of Zippy 2">
+        Content of Zippy 2
+      </zippy>
+     <br/>
+     
     `
 })
 export class AppComponent { 

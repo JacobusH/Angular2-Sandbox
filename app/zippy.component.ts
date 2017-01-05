@@ -4,21 +4,31 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     selector: 'zippy',
     template: `
         <div class="zippy">
-            <div class="zipp-title">
+            <div 
+                class="zippy-title" 
+                (click)="toggle()"
+            >
+                {{title}}
+                <i class="glyphicon pull-right"
+                    [ngClass]="{
+                        'glyphicon-chevron-up': !isExpanded,
+                        'glyphicon-chevron-down': isExpanded
+                    }"
+                >
+                </i> 
             </div>
-            <div class="zippy-content">
+            <div *ngIf="isExpanded" class="zippy-content">
+                <ng-content></ng-content>
             </div>
         </div>
     `
 })
-
-export class ZippyComonent {
+export class ZippyComponent {
     @Input() title: string;
-    isExpaned = false;
+    isExpanded = false;
 
     toggle()
     {
-        this.isExpaned = !this.isExpaned;
+        this.isExpanded = !this.isExpanded;
     }
-
 }

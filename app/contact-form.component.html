@@ -1,4 +1,4 @@
-<form>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.form)">
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input ngModel 
@@ -7,10 +7,20 @@
         id="firstName" 
         type="text" 
         class="form-control" 
-        required>
-        <div class="alert alert-danger" 
-            *ngIf="firstName.touched && !firstName.valid">
-            First name is required.
+        required
+        minlength="3">
+        <div *ngIf="firstName.touched && firstName.errors">
+            {{firstName.errors | json}}
+            <div 
+                class="alert alert-danger" 
+                *ngIf="firstName.errors.required">
+                First name is required.
+            </div>
+            <div 
+                class="alert alert-danger" 
+                *ngIf="firstName.errors.minlength">
+                At least {{firstName.errors.minlength.requiredLength}} characters
+            </div>
         </div>
     </div>
     <div class="form-group">
@@ -26,5 +36,5 @@
         </textarea>
         <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">Comment is required</div>
     </div>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
 </form>

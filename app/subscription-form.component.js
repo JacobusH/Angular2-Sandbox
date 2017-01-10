@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ContactFormComponent = (function () {
-    function ContactFormComponent() {
+var forms_1 = require("@angular/forms");
+var SignUpFormComponent = (function () {
+    function SignUpFormComponent() {
+        this.form = new forms_1.FormGroup({
+            username: new forms_1.FormControl('', forms_1.Validators.required),
+            password: new forms_1.FormControl('', forms_1.Validators.required)
+        });
     }
-    ContactFormComponent.prototype.onSubmit = function (form) {
-        console.log(form);
-    };
-    return ContactFormComponent;
+    return SignUpFormComponent;
 }());
-ContactFormComponent = __decorate([
+SignUpFormComponent = __decorate([
     core_1.Component({
-        selector: 'contact-form',
-        templateUrl: 'app/contact-form.component.html'
+        selector: 'signup-form',
+        templateUrl: 'app/subscription-form.component.html'
     }),
     __metadata("design:paramtypes", [])
-], ContactFormComponent);
-exports.ContactFormComponent = ContactFormComponent;
-//# sourceMappingURL=contact-form.component.js.map
+], SignUpFormComponent);
+exports.SignUpFormComponent = SignUpFormComponent;
+//# sourceMappingURL=subscription-form.component.js.map

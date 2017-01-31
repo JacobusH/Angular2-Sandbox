@@ -33,7 +33,7 @@ import {Router} from '@angular/router';
       <li><a [routerLink]="['/']">Home</a></li>
       <li><a [routerLink]="['messages']">Messages</a></li>
       <li><a [routerLink]="['photos']">Photos</a></li>
-      <li><a [routerLink]="['photos', 1]">Photos</a></li>
+      <li><a [routerLink]="['photos', 1]">Photos Detail</a></li>
      </ul>
      <button (click)="onClick()">Click Me</button>
      <router-outlet></router-outlet>

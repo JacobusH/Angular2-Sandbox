@@ -18,11 +18,12 @@ import {GithubUserPageComponent} from './github-user-page.component';
 // import {MessagesModule} from './messages/messsages.module';
 // import {PhotosModule} from './photos/photos.module';
 import {routing} from './app.routing';
-import {Router, RouterModule} from '@angular/router';
+import {PhotoDetailsComponent} from './photos/photo-details.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule, RouterModule ],
-  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent, ContactFormComponent, SignUpFormComponent, GithubUserPageComponent ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule, routing ],
+  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, 
+                  ZippyComponent, ContactFormComponent, SignUpFormComponent, GithubUserPageComponent, PhotoDetailsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [MessagesService,  ImagesService]
 })

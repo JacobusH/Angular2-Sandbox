@@ -24,7 +24,10 @@ var contact_form_component_1 = require("./contact-form.component");
 var subscription_form_component_1 = require("./subscription-form.component");
 var http_1 = require("@angular/http");
 var github_user_page_component_1 = require("./github-user-page.component");
-var router_1 = require("@angular/router");
+// import {MessagesModule} from './messages/messsages.module';
+// import {PhotosModule} from './photos/photos.module';
+var app_routing_1 = require("./app.routing");
+var photo_details_component_1 = require("./photos/photo-details.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,8 +35,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, http_1.JsonpModule, router_1.RouterModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, voter_component_1.VoterComponent, summary_pipe_1.SummaryPipe, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SignUpFormComponent, github_user_page_component_1.GithubUserPageComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, http_1.JsonpModule, app_routing_1.routing],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, voter_component_1.VoterComponent, summary_pipe_1.SummaryPipe,
+            zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SignUpFormComponent, github_user_page_component_1.GithubUserPageComponent, photo_details_component_1.PhotoDetailsComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [messages_service_1.MessagesService, images_service_1.ImagesService]
     }),

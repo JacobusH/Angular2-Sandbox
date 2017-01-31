@@ -10,13 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var usernameValidators_1 = require("./usernameValidators");
 var SignUpFormComponent = (function () {
-    function SignUpFormComponent() {
-        this.form = new forms_1.FormGroup({
-            username: new forms_1.FormControl('', forms_1.Validators.required),
-            password: new forms_1.FormControl('', forms_1.Validators.required)
+    function SignUpFormComponent(fb) {
+        this.form = fb.group({
+            username: ['', forms_1.Validators.compose([
+                    forms_1.Validators.required,
+                    usernameValidators_1.UsernameValidators.cannotContainSpace
+                ]), usernameValidators_1.UsernameValidators.shouldBeUnique],
+            password: ['', forms_1.Validators.required]
         });
     }
+    // form = new FormGroup({
+    //     username: new FormControl('', Validators.required),
+    //     password: new FormControl('', Validators.required)
+    // });
+    SignUpFormComponent.prototype.signup = function () {
+        this.form.controls['username'].setErrors({
+            invalidLogin: true
+        });
+    };
     return SignUpFormComponent;
 }());
 SignUpFormComponent = __decorate([
@@ -24,7 +37,7 @@ SignUpFormComponent = __decorate([
         selector: 'signup-form',
         templateUrl: 'app/subscription-form.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [forms_1.FormBuilder])
 ], SignUpFormComponent);
 exports.SignUpFormComponent = SignUpFormComponent;
 //# sourceMappingURL=subscription-form.component.js.map

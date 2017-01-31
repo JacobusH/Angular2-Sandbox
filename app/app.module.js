@@ -21,6 +21,10 @@ var summary_pipe_1 = require("./summary.pipe");
 var zippy_component_1 = require("./zippy.component");
 var forms_1 = require("@angular/forms");
 var contact_form_component_1 = require("./contact-form.component");
+var subscription_form_component_1 = require("./subscription-form.component");
+var http_1 = require("@angular/http");
+var github_user_page_component_1 = require("./github-user-page.component");
+var router_1 = require("@angular/router");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,8 +32,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, voter_component_1.VoterComponent, summary_pipe_1.SummaryPipe, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, http_1.JsonpModule, router_1.RouterModule],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, voter_component_1.VoterComponent, summary_pipe_1.SummaryPipe, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SignUpFormComponent, github_user_page_component_1.GithubUserPageComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [messages_service_1.MessagesService, images_service_1.ImagesService]
     }),

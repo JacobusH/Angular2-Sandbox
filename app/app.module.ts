@@ -11,10 +11,18 @@ import {SummaryPipe} from './summary.pipe';
 import {ZippyComponent} from './zippy.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ContactFormComponent} from './contact-form.component';
+import {SignUpFormComponent} from './subscription-form.component';
+import {HttpModule, JsonpModule} from '@angular/http';
+import {GithubUserPageComponent} from './github-user-page.component';
+
+// import {MessagesModule} from './messages/messsages.module';
+// import {PhotosModule} from './photos/photos.module';
+import {routing} from './app.routing';
+import {Router, RouterModule} from '@angular/router';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent, ContactFormComponent ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule, RouterModule ],
+  declarations: [ AppComponent, MessagesComponent, FavoriteComponent, LikeComponent, VoterComponent, SummaryPipe, ZippyComponent, ContactFormComponent, SignUpFormComponent, GithubUserPageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [MessagesService,  ImagesService]
 })

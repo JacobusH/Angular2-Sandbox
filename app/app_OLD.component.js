@@ -10,11 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var post_service_1 = require("./post.service");
-var router_1 = require("@angular/router");
 var AppComponent = (function () {
-    function AppComponent(_postService, _router) {
+    function AppComponent(_postService) {
         this._postService = _postService;
-        this._router = _router;
         this.isLoading = true;
         this.likes = {
             likeCount: 109,
@@ -38,18 +36,15 @@ var AppComponent = (function () {
     AppComponent.prototype.onFavoriteChange = function ($event) {
         console.log($event);
     };
-    AppComponent.prototype.onClick = function () {
-        this._router.navigate(['photos', 2]);
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <githubUserPage></githubUserPage>\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [likeCount]=\"likes.likeCount\" [isLiked]=\"likes.isLiked\"></like>\n      <div>\n        {{post.body | summary:100}}\n      </div>\n      <zippy title=\"Zipyyyyyyy\">\n      Yes this is zipppedpepd \n      </zippy>\n      <voter [voteCount]=\"votes.voteCount\"></voter>\n      <div *ngIf=\"isLoading\"><i class=\"fa fa-spinner fa-spin fa-3x\"></i></div>\n      <messages></messages>\n      <zippy title=\"Title of Zippy 1\">\n        Content of Zippy 1\n      </zippy>\n      <zippy title=\"Title of Zippy 2\">\n        Content of Zippy 2\n      </zippy>\n     <br/>\n     <contact-form></contact-form>\n     <signup-form></signup-form>\n     <h1>routing</h1>\n     <ul>\n      <li><a [routerLink]=\"['/']\">Home</a></li>\n      <li><a [routerLink]=\"['messages']\">Messages</a></li>\n      <li><a [routerLink]=\"['photos']\">Photos</a></li>\n      <li><a [routerLink]=\"['photos', 1]\">Photos</a></li>\n     </ul>\n     <button (click)=\"onClick()\">Click Me</button>\n     <router-outlet></router-outlet>\n     \n    ",
+        template: "\n      <githubUserPage></githubUserPage>\n      <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n      <like [likeCount]=\"likes.likeCount\" [isLiked]=\"likes.isLiked\"></like>\n      <div>\n        {{post.body | summary:100}}\n      </div>\n      <zippy title=\"Zipyyyyyyy\">\n      Yes this is zipppedpepd \n      </zippy>\n      <voter [voteCount]=\"votes.voteCount\"></voter>\n      <div *ngIf=\"isLoading\"><i class=\"fa fa-spinner fa-spin fa-3x\"></i></div>\n      <messages></messages>\n      <zippy title=\"Title of Zippy 1\">\n        Content of Zippy 1\n      </zippy>\n      <zippy title=\"Title of Zippy 2\">\n        Content of Zippy 2\n      </zippy>\n     <br/>\n     <contact-form></contact-form>\n     <signup-form></signup-form>\n     \n    ",
         providers: [post_service_1.PostService]
     }),
-    __metadata("design:paramtypes", [post_service_1.PostService, router_1.Router])
+    __metadata("design:paramtypes", [post_service_1.PostService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=app_OLD.component.js.map

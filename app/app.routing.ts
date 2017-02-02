@@ -1,16 +1,18 @@
 import { ModuleWithProviders } from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
-// import {HomeComponenet} from './home.component';
-// import {PhotosComponenet} from './photos/photos.component';
+import {HomeComponent} from './home.component';
+import {PhotosComponent} from './photos/photos.component';
 import {PhotoDetailsComponent} from './photos/photo-details.component';
-// import {MessagesComponenet} from './messages/messages.component';
+import {OtherMessagesComponent} from './messages/messages.component';
 // import {NotFoundComponenet} from './not-found.component';
+import {PreventUnsavedChangesGuard} from './prevent-unsaved-changes-guard.service';
 
 export const routing:ModuleWithProviders = RouterModule.forRoot([
-    // {path: '', component: HomeComponent},
-    // {path: 'messages', component: MessagesComponent},
-    {path: 'photos/:id', component: PhotoDetailsComponent},
-    // {path: 'photos', component: PhotosComponent},
+    {path: '', component: HomeComponent},
+    {
+        path: 'messages', 
+        component: OtherMessagesComponent,
+    canDeactivate: [PreventUnsavedChangesGuard]}
     // {path: '**', component: NotFoundComponent},
 
 ]);
